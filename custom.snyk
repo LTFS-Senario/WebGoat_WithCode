@@ -1,0 +1,31 @@
+custom_rules:
+  - id: Hardcoded IP address
+    description: >
+      Hard-coded IP address detected. Use a hostname and externalize via
+      config/env/service discovery.
+    severity: medium
+    cwe:
+      - CWE-547
+    fix_analysis: |
+      Replace IP literals with DNS hostnames and externalize:
+      - Spring config / application.properties
+      - Environment variables (e.g., PAYMENT_HOST, PAYMENT_PORT)
+      - Service discovery / internal DNS
+    rule_code: ^(?:(?:25[0-5]|2[0-4]\d|1?\d?\d)(?:\.(?:25[0-5]|2[0-4]\d|1?\d?\d)){3})$
+    languages:
+      - apex
+      - c
+      - cpp
+      - csharp
+      - go
+      - html
+      - java
+      - javascript
+      - kotlin
+      - php
+      - python
+      - ruby
+      - scala
+      - swift
+      - typescript
+      - vb
